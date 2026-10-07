@@ -13,3 +13,28 @@ import java.util.Scanner;
         totalHarga = hargaPerCup * jumlahCup;
         diskon = 0;
         System.out.println("Total Harga: " + totalHarga);
+
+        //SK2: proses perhitungan diskon
+        if (totalHarga >= 100000) {
+            diskon = hargaPerCup * jumlahCup * 10/100;
+        } else if (totalHarga >= 50000) {
+            diskon = hargaPerCup * jumlahCup * 5/100;
+        } else {
+            diskon = 0;
+        }
+        totalBayar = totalHarga - diskon;
+        System.out.println("Total harga: " + totalHarga);
+        System.out.println("Diskon: " + diskon);
+        System.out.println("Total Bayar: " + totalBayar);
+
+        System.out.print("Masukkan uang bayar: ");
+        uangBayar = sc.nextInt();
+        if (uangBayar >= totalBayar) {
+            kembalian = uangBayar - totalBayar;
+            System.out.println("Kembalian: " + kembalian);
+        } else {
+            kurang = totalBayar - uangBayar;
+            System.out.println("Uang tidak cukup. Kurang: " + kurang);
+        }   
+    }
+ }
